@@ -29,6 +29,20 @@ public class EventListener implements KeyListener {
                     RapidRoll.ball.x=RapidRoll.WIDTH-RapidRoll.ball.getRADIUS();
                 break;
             }
+            case KeyEvent.VK_ENTER:
+            {
+                if (RapidRoll.gameOver){
+                    RapidRoll.rapidRoll.startGame();
+                }else{
+                    if (RapidRoll.rapidRoll.getTimer().isRunning()){
+                    RapidRoll.rapidRoll.getTimer().stop();
+                    }else{
+                        RapidRoll.rapidRoll.getTimer().start();
+
+                    }
+                }
+                break;
+            }
 
         }
 
