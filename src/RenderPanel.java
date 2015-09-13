@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
  * Created by brian on 9/11/15.
  */
 public class RenderPanel extends JPanel {
-    public RenderPanel(){
+    public RenderPanel() {
 
 
     }
@@ -16,7 +16,13 @@ public class RenderPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        RapidRoll.rapidRoll.repaint(g);
+
+        if (RapidRoll.gameOver) {
+            super.paintComponent(g);
+            RapidRoll.rapidRoll.paintScore(g);
+        } else {
+            RapidRoll.rapidRoll.repaint(g);
+        }
 
 
     }
